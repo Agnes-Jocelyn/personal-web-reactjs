@@ -1,75 +1,55 @@
-import React, { Component } from "react";
-import { Container, Col, Row, Jumbotron, Image, Button } from "react-bootstrap";
-import Gambar from "./img/3.jpg";
+import React, {useEffect, useState } from "react";
+import { Container, Col, Row, Jumbotron, Card, Button } from "react-bootstrap";
+import axios from 'axios'
 
-class Article extends Component {
-  render() {
+  const Article = () => {
+    const [data, setData] = useState([])
+  
+  
+  useEffect(() => {
+    axios.get(`http://35.240.201.155:3000/api/v1/wanderlink/show/idn/destination`)
+    .then(response => {
+      this.setState({data: response.data});
+      console.log(response);
+      
+    })
+    .catch((error) => {
+      window.alert('Server having issues')
+    })
+  }, [])
+
+
     return (
-      <div>
-        <Jumbotron>
+      <div>   
+      <Jumbotron>
           <Container>
             <br/>
               <h2>Article</h2>
               <hr/>
-              <br/>
-            <Row>
-              <Col xs={4}>
-                <Image src={Gambar} thumbnail className="thumb" />
-              </Col>
-              <Col xs={6}>
-                  <h6>Lorem Ipsum</h6>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. 
-                </p>
-                <Button variant="info">Read more &rarr;</Button>
-              </Col>
-            </Row>
-            <br/>
-            <Row>
-              <Col xs={4}>
-                <Image src={Gambar} thumbnail className="thumb" />
-              </Col>
-              <Col xs={6}>
-                  <h6>Lorem Ipsum</h6>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. 
-                </p>
-                <Button variant="info">Read more &rarr;</Button>
-              </Col>
-            </Row>
-            <br/>
-            <Row>
-              <Col xs={4}>
-                <Image src={Gambar} thumbnail className="thumb" />
-              </Col>
-              <Col xs={6}>
-                  <h6>Lorem Ipsum</h6>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. 
-                </p>
-                <Button variant="info">Read more &rarr;</Button>
-              </Col>
-            </Row>
-          </Container>
-        </Jumbotron>
-      </div>
-    );
-  }
-}
+              <br/> 
+              {   
+                data.map((item) => {
+                const {destinationName, description, images} = item;
+                return (
+                      <Row>
+                      <Col xs={4}>
+                      <Card style={{ width: '18rem' }}>
+                         <Card.Img variant="top" src={images} alt="..." />
+                          <Card.Body>
+                            <Card.Title>{destinationName}</Card.Title>
+                            <Card.Text> {description}</Card.Text>
+                            <Button variant="info">Read more &rarr;</Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      </Row>
+                     
 
+                      ) })           
+                }
+                </Container>
+                </Jumbotron>
+                </div>
+    )
+              } 
 export default Article;
