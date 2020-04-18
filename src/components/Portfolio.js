@@ -11,7 +11,7 @@ class Portfolio extends Component {
     return (
       <div>
         <Jumbotron Jumbotron-fluid>
-          <Container>
+          <Container  >
             <br/>
             <h2>Portfolio</h2>
             <hr />

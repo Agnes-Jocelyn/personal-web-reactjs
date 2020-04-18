@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import { Container, Row, Col, Button, Jumbotron, Image} from "react-bootstrap";
 import "./Style.css";
 import Icon from './img/Header.png'
@@ -37,7 +38,7 @@ class Index extends Component {
                   a fullstack developer. And here's more details
                 </p>
                 <br />
-                <Button variant="light" to="/portfolio">Read more &nbsp; &rarr;</Button>
+                <Link className="btn btn-light" to="/portfolio">Read more &nbsp; &rarr;</Link>
               </Col>
             </Row>
             <br/> <br/>

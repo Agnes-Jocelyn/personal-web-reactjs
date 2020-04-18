@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Jumbotron, Container, Card } from "react-bootstrap";
+import { Form, Button, Jumbotron, Container} from "react-bootstrap";
 import "./Style.css";
 
 class Hireme extends Component {
