@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Jumbotron, Container} from "react-bootstrap";
+import { Form, Button, Jumbotron, Container, Card} from "react-bootstrap";
 import "./Style.css";
 
 class Hireme extends Component {
@@ -13,15 +13,17 @@ class Hireme extends Component {
           <br />
 
           <Container>
+            <Card className="cardhire">
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Please input your email to hire me</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
-              <Button variant="info" type="submit" className="buttonsub">
+              <Button variant="info" type="submit" className="buttonsub" block>
                 Submit
               </Button>
             </Form>
+            </Card>
           </Container>
         </Jumbotron>
       </div>

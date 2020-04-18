@@ -19,11 +19,12 @@ const Item = () => {
     const showData = data.map((item, index) => 
     <div key={index} className="col-4">
         <div className="card mt-4">
-            <img className="card-img-top" src={`http://35.240.201.155:3000/${item.images}`} width="250px" height="350px" />
+            <img className="card-img-top" alt="..." src={`http://35.240.201.155:3000/${item.images}`} width="250px" height="350px" />
             <div className="card-body">
                 <h5 className="card-title">{item.destinationName}</h5>
                     <p className="card-text">{item.province}</p>
-                    <Link to={`/article/${item.id}`} className="btn btn-info">Read more &rarr;</Link>
+                    <p className="card-text">{item.city}</p>
+                    <Link to={`/article/${item._id}`} className="btn btn-info">Read more &rarr;</Link>
         </div>
         </div>
     </div>)

@@ -22,6 +22,11 @@ nav a:hover{
   text-decoration: none;
 }
 
+.main{
+  display: flex;
+  justify-content: space-evenly ;
+}
+
 .icon{
   margin-left: 150px;
   width: 450px;
@@ -29,7 +34,7 @@ nav a:hover{
 
 .headertext{
   font-family: 'Bree Serif', serif;
-  font-size: 24px;
+  font-size: 2em;
   margin-top: 200px;
 }
 
@@ -105,24 +110,6 @@ h3{
   margin-left: 115px;
 }
 
-.thumb {
-  width: 400px;
-}
-
-.buttonsub{
-  margin-bottom: 13%;
-  margin-left: 48%;
-}
-
-input.form-control {
-  margin-left: 30%;
-  width: 500px;
-}
-
-label.form-label{
-  margin-left: 40%;
-}
-
 span{
   margin-left: 40px;
   font-size: 24px;
@@ -131,4 +118,17 @@ span{
 
 span.textfooter{
   padding: 0% 0% 0% 38%;
+}
+
+.isidetail{
+  margin-left: 30%;
+}
+
+.cardhire{
+  height: 200px;
+  border-radius: 20px;
+  padding:30px 30px 10px 30px;
+  margin-left: 330px;
+  width: 450px;
+  margin-bottom: 60px;
 }

@@ -17,7 +17,7 @@ class Portfolio extends Component {
             <hr />
             <Row>
               <Col xs={6}>
-                <img src={gambar1} className="gmbrport" />
+                <img src={gambar1} className="gmbrport" alt="..."/>
               </Col>
               <Col xs={4}>
                 <br />
@@ -37,13 +37,13 @@ class Portfolio extends Component {
           <h3>Programming Langguage</h3>
           <Row>
             <Col xs={6} md={4}>
-              <img src={icon1} className="icoprogram" />
+              <img src={icon1} className="icoprogram" alt="..."/>
             </Col>
             <Col xs={6} md={4}>
-              <img src={icon2} className="icoprogram" />
+              <img src={icon2} className="icoprogram" alt="..."/>
             </Col>
             <Col xs={6} md={4}>
-              <img src={icon3} className="icoprogram" />
+              <img src={icon3} className="icoprogram" alt="..."/>
             </Col>
             <br />
           </Row>

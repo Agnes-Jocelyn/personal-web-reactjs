@@ -17,22 +17,13 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route path="/hire">
-            <HireMe />
-          </Route>
-          <Route path="/article" exact component={Article}>
-          <Route path="/Article" component={Item} exact />
-          <Route path="/Item" component={Readmore} exact />
-            <Article/>
-          </Route>
-          <Route path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route path="/">
-            <Index />
-          </Route>
+          <Route path="/hire" component={HireMe}/>
+            <Route path="/article" exact component={Article}/>
+            <Route exact path="/article/:_id" component={Readmore} />
+          <Route path="/portfolio" component={Portfolio}/>
+         <Route path="/" exact component={Index}/>
         </Switch>
-        <Footer />
+        <Footer/>
       </div>
     </BrowserRouter>
   );

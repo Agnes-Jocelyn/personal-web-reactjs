@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
-import { Container, Row, Col, Button, Jumbotron, Image} from "react-bootstrap";
+import { Container, Row, Col, Jumbotron, Image} from "react-bootstrap";
 import "./Style.css";
 import Icon from './img/Header.png'
 import gambar1 from "./img/Profile.jpeg";
